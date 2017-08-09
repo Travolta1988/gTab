@@ -1,0 +1,20 @@
+
+<div class="container">
+    <p>
+      Выберите букву:
+    </p>
+  <ul class="pagination">
+    <li class="page-item" *ngFor="let letter of rusLetters">
+      <a [routerLink]="['/chords', {outlets: {'artists': [letter]}}]" class="page-link">{{ letter }}</a>
+    </li>
+  </ul>
+  <ul class="pagination">
+    <li class="page-item" *ngFor="let letter of engLetters">
+      <a [routerLink]="['/chords', {outlets: {'artists': [letter]}}]" class="page-link">{{ letter }}</a>
+    </li>
+  </ul>
+</div>
+
+<div class="container">
+  <router-outlet name="artists"></router-outlet>
+</div>
